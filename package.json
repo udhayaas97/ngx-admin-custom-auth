@@ -1,6 +1,6 @@
 {
   "name": "netcon-market-place",
-  "version": "8.0.0",
+  "version": "1.0.0",
   "license": "MIT",
   "repository": {
     "type": "git",
@@ -9,7 +9,7 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
-    "build": "npm run build -- --configuration production --aot",
+    "build": "ng build --configuration production --aot",
     "lint": "ng lint",
     "lint:fix": "ng lint netcon-market-place --fix",
     "lint:styles": "stylelint ./src/**/*.scss",

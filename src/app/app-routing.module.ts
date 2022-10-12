@@ -1,14 +1,19 @@
-import { NgModule } from '@angular/core';
-import { ExtraOptions, RouterModule, Routes } from '@angular/router';
-import { NbAuthComponent, NbLoginComponent } from '@nebular/auth';
+import { NgModule } from "@angular/core";
+import { ExtraOptions, RouterModule, Routes } from "@angular/router";
+import { NbAuthComponent, NbLoginComponent } from "@nebular/auth";
 
 export const routes: Routes = [
   {
-    path: '',
+    path: "",
+    redirectTo: "login",
+    pathMatch: "full",
+  },
+  {
+    path: "",
     component: NbAuthComponent,
     children: [
       {
-        path: 'login',
+        path: "login",
         component: NbLoginComponent,
       },
     ],
