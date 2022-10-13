@@ -19,17 +19,20 @@ steps:
       npm install -g @angular/cli
       npm ci
     displayName: "npm Clean and install"
-  - script: |
-      npm run build
-    displayName: "Building"
+
   - script: |
       npm run precommit:check
     displayName: "Checks"
+
+  - script: |
+      npm run build
+    displayName: "Building"
+
   - task: CopyFiles@2
     inputs:
-      SourceFolder: '$(agent.builddirectory)/s/build'
-      Contents: '**'
-      TargetFolder: '$(build.artifactstagingdirectory)'
+      SourceFolder: "$(agent.builddirectory)/s/build"
+      Contents: "**"
+      TargetFolder: "$(build.artifactstagingdirectory)"
       OverWrite: true
   - upload: $(Build.ArtifactStagingDirectory)
-    artifact: drop  
+    artifact: drop

@@ -1,6 +1,6 @@
 import { NgModule } from "@angular/core";
 import { ExtraOptions, RouterModule, Routes } from "@angular/router";
-import { NbAuthComponent, NbLoginComponent } from "@nebular/auth";
+import { NbAuthComponent } from "@nebular/auth";
 
 export const routes: Routes = [
   {
@@ -11,12 +11,10 @@ export const routes: Routes = [
   {
     path: "",
     component: NbAuthComponent,
-    children: [
-      {
-        path: "login",
-        component: NbLoginComponent,
-      },
-    ],
+    loadChildren: () =>
+      import("./pages/public/authentication/authentication.module").then(
+        (m) => m.AuthenticationModule
+      ),
   },
 ];
 

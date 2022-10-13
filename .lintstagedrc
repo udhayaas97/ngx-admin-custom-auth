@@ -1,4 +1,3 @@
 {
-  "!({*.{json,yml},.*})": "npm run lint:fix",
-  "!(.*)": "npx prettier --write"
+  "!({.*,*.min.*})": "npx prettier --write"
 }
