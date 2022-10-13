@@ -15,6 +15,7 @@
     "lint:fix": "ng lint netcon-market-place --fix",
     "lint:styles": "stylelint ./src/**/*.scss",
     "precommit": "lint-staged && npm run lint:ci && npm run prettier:check",
+    "precommit:check": "npm run lint:ci && npm run prettier:check",
     "prettier": "npx prettier --write .",
     "prettier:check": "npx prettier --check .",
     "postinstall": "ngcc --properties es2015 es5 browser module main --first-only --create-ivy-entry-points --tsconfig \"./src/tsconfig.app.json\""
